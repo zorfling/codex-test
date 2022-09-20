@@ -36,8 +36,8 @@ async function callCodexAPIWithContext({
     model: 'code-davinci-002',
     prompt: userPrompt.trim() + '\n',
     temperature,
-    max_tokens: 512,
-    stop: ['//', '"""'],
+    max_tokens: 2048,
+    stop: ['//', '"""', '}\n\n'],
   });
   return lastLine + '\n' + (response?.data?.choices?.[0].text ?? '');
 }

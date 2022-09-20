@@ -28,7 +28,8 @@ const myGrandMotherBirthdayVideo: Project = {
 };
 `;
 
-const originalPrompt = `interface Project {
+const originalPrompt = /*ts*/ `interface Project {
+  prompt: string;
   musicSearchQuery: string;
   scenes: Scene[];
 }
@@ -39,9 +40,10 @@ interface Scene {
   displayText: string;
 }
 
-// make a video for a child's birthday with 7 scenes
+// make a video for a birthday. make it 30 seconds long
 const birthdayVideo: Project = {
-  musicSearchQuery: 'yesterday',
+  prompt: 'make a video for a birthday. make it 30 seconds long',
+  musicSearchQuery: 'nostalgic happy music',
   scenes: [
     {
       duration: 5,
@@ -81,9 +83,10 @@ const birthdayVideo: Project = {
   ],
 };
 
-// make a graduation video with 4 scenes
+// make a graduation video. make it 20 seconds long
 const graduationVideo: Project = {
-  musicSearchQuery: 'graduation',
+  prompt: 'make a graduation video. make it 20 seconds long',
+  musicSearchQuery: 'pompous regal music',
   scenes: [
     {
       duration: 5,
@@ -92,7 +95,7 @@ const graduationVideo: Project = {
     },
     {
       duration: 5,
-      stockSearchQuery: 'graduation cap',
+      stockSearchQuery: 'young adult in graduation cap',
       displayText: 'We are so proud of you',
     },
     {
@@ -108,7 +111,35 @@ const graduationVideo: Project = {
   ],
 }
 
-// make a video for my grandmother's birthday
+// make a youtube gaming video. make it 15 seconds long
+const gamingVideo: Project = {
+  prompt: 'make a youtube gaming video. make it 15 seconds long',
+  musicSearchQuery: 'upbeat gaming music',
+  scenes: [
+    {
+      duration: 3,
+      stockSearchQuery: 'gaming controller',
+      displayText: 'Welcome to my channel',
+    },
+    {
+      duration: 5,
+      stockSearchQuery: 'gaming chair with controller',
+      displayText: 'I play the game',
+    },
+    {
+      duration: 5,
+      stockSearchQuery: 'first person shooter footage',
+      displayText: 'Watch me win this game',
+    },
+    {
+      duration: 2,
+      stockSearchQuery: 'swirling patterns',
+      displayText: 'Yeah I did it',
+    },
+  ],
+}
+
+// make a video for my grandmother's birthday. make it 14 seconds long
 `;
 
 const Home: NextPage = () => {
