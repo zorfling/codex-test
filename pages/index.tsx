@@ -4,28 +4,34 @@ import { useState } from 'react';
 import { CodeBlock } from '../components/CodeBlock';
 import styles from '../styles/Home.module.css';
 
-const grandmaDemo = `
-// make a video for my grandmother's birthday
-const myGrandMotherBirthdayVideo: Project = {
-  musicSearchQuery: 'happy birthday',
+const grandmaDemo = /*ts*/ `
+// make a video for my grandmother's birthday. make it 14 seconds long
+const grandmaVideo: Project = {
+  prompt: 'make a video for my grandmother\\\'s birthday. make it 14 seconds long',
+  musicSearchQuery: 'nostalgic happy music',
   scenes: [
     {
-      duration: 2,
-      stockSearchQuery: 'balloons white background',
-      displayText: 'Happy birthday',
+      duration: 4,
+      stockSearchQuery: 'portrait of grandma',
+      displayText: 'Dearest Grandma',
     },
     {
-      duration: 5,
-      stockSearchQuery: 'season snow',
-      displayText: 'We wish you the best on your special day',
+      duration: 3,
+      stockSearchQuery: 'grandma cooking',
+      displayText: 'Remember the holidays',
     },
     {
-      duration: 5,
-      stockSearchQuery: 'snowfall',
-      displayText: 'Have a great day',
+      duration: 4,
+      stockSearchQuery: 'grandma with grandchildren',
+      displayText: 'I miss you',
+    },
+    {
+      duration: 3,
+      stockSearchQuery: 'grandma smiling',
+      displayText: 'Hope you are doing well',
     },
   ],
-};
+}
 `;
 
 const originalPrompt = /*ts*/ `interface Project {
